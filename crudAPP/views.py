@@ -4,6 +4,7 @@ from django.contrib.sessions.models import Session
 from django.contrib import messages
 from django.http import HttpResponse
 from crudAPP.models import WebUser
+from crudAPP.models import DeleteUser
 
 # Create your views here.
 
@@ -149,8 +150,11 @@ def pending_checkall(request):
     return render (request, 'admin/checkall.html',context)
 
 def delete_user(request,username):
-    return HttpResponse(username)
-
+    delete = WebUser.objects.filter(userName = username)
+    delete_user = DeleteUser(userName = username)
+    delete_user.save()
+    delete.delete()
+    return HttpResponse ('Data has been deleted!')
 def approved_user(request):
 
     return HttpResponse('User has been approved!')

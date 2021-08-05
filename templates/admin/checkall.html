@@ -60,8 +60,8 @@
             <td>{{datas.Password}}</td>
             <td>
               <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <a type="button" class="btn btn-danger btn-sm mx-1" {% url 'delete_user' datas.userName %}>Delete</a>
-                <a type="button" class="btn btn-success btn-sm mx-1" href="/approved_user">Approved</a>
+                <a type="button" class="btn btn-danger btn-sm mx-1" href={% url 'delete_user' datas.userName %}>Delete</a>
+                <a type="button" class="btn btn-success btn-sm mx-1" href={% url 'delete_user' datas.userName %}>Approved</a>
               </div>
             </td>
           </tr>

@@ -22,7 +22,7 @@ urlpatterns = [
     #------------------> Admin Dashboard check links
     path('checkall', views.checkall, name='checkall'),
     path('pending_checkall', views.pending_checkall, name='pending_checkall'),
-    path('delete_user', views.delete_user, name='delete_user'),
+    path('delete_user/<str:username>', views.delete_user, name='delete_user'),
     path('approved_user', views.approved_user, name='approved_user'),
 
 ]

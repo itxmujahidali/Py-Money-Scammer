@@ -37,7 +37,7 @@ urlpatterns = [
     #Checking Dashboard links
     path('checkall', include('crudAPP.urls')),
     path('pending_checkall', include('crudAPP.urls')),
-    path('delete_user', include('crudAPP.urls')),
+    path('delete_user/<str:username>', include('crudAPP.urls')),
     path('approved_user', include('crudAPP.urls')),
 
 ]
